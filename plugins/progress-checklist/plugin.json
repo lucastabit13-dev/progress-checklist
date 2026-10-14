@@ -1,0 +1,23 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "progress-checklist",
+  "version": "0.3.0",
+  "description": "Create and maintain a visible checklist for a task in the conversation.",
+  "author": { "name": "Progress Checklist contributors" },
+  "license": "MIT",
+  "keywords": ["checklist", "progress", "tasks", "productivity"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Progress Checklist",
+        "shortDescription": "Track steps as they get done",
+        "longDescription": "Turn a task into a checklist and update its completion status in the chat as work progresses.",
+        "category": "Productivity",
+        "capabilities": ["Read"],
+        "defaultPrompt": [
+          "Make a progress checklist for this task and keep it updated as we work."
+        ]
+      }
+    }
+  }
+}

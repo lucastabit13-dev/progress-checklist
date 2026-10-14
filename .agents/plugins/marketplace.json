@@ -1,0 +1,12 @@
+{
+  "name": "progress-checklist-local",
+  "interface": { "displayName": "Progress Checklist" },
+  "plugins": [
+    {
+      "name": "progress-checklist",
+      "source": { "source": "local", "path": "./plugins/progress-checklist" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Productivity"
+    }
+  ]
+}
