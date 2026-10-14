@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "progress-checklist",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Create and maintain a visible checklist for a task in the conversation.",
   "author": { "name": "Progress Checklist contributors" },
   "license": "MIT",

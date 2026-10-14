@@ -5,9 +5,11 @@ description: Create and maintain a visible to-do checklist for a task in the cur
 
 # Track progress
 
-When the user gives a task to track, break it into a short, concrete checklist. Show it in a normal assistant message using Markdown checkboxes (`- [ ]` and `- [x]`). Include a compact count such as `2/5 complete`.
+When the user gives a task to track, reason through its desired outcome, work stages, dependencies, and verification before choosing checklist steps. Include enough concrete steps to make meaningful progress visible and to cover the actual work. A small task may need only a few steps; a multi-stage task needs a correspondingly more detailed list. Do not force unrelated work into one broad item, omit necessary validation, or add artificial steps just to make the list longer. Make each item a distinct, verifiable outcome rather than a command-by-command log.
 
-As work proceeds, show the updated checklist in a new normal assistant message when a meaningful step changes state. Tool calls, command output, logs, and hidden reasoning do not count as showing the checklist to the user. If a tool or test establishes completion, report the updated checklist in the assistant message that follows. Include the latest checklist in the final answer when the task ends.
+Show the checklist in a normal assistant message using Markdown checkboxes (`- [ ]` and `- [x]`). Include a compact count such as `2/5 complete`.
+
+Work through checklist items in order, one item at a time. Do not start the next item until the current item is complete or explicitly blocked. After completing or blocking each item, send a normal assistant message with the updated checklist before continuing. Mark only that item as complete in that update; do not silently skip items, combine separate items into one completion, or report multiple items as completed at once. If a dependency requires changing the order, update the checklist and explain why before proceeding. Tool calls, command output, logs, and hidden reasoning do not count as showing progress. Include the latest checklist in the final answer when the task ends.
 
 Mark an item complete only when the work is actually done or the user says it is done. Keep unfinished items unchecked. If the task changes, revise the list and explain the change briefly.
 

@@ -86,7 +86,13 @@ Edit the skill or manifest, then run:
 node scripts/validate.mjs
 ```
 
-The script needs Node.js 20 or newer and installs no packages. Test the plugin in a new chat after reinstalling it from the local marketplace. Bump the version in `plugin.json` for a release.
+The validator needs Node.js 20 or newer and installs no packages. For a local installation whose marketplace points to this project directory, run the sync helper after changing package files:
+
+```sh
+node scripts/sync-installed-plugin.mjs
+```
+
+The helper reinstalls the plugin from `progress-checklist-local`, mirrors the project package into the installed version directory, and checks the installed version against `plugin.json`. This keeps the project files as the source of truth. For a GitHub marketplace install, run the marketplace update commands above instead. Bump the version in `plugin.json` for a release.
 
 ## Publish this project on GitHub
 
