@@ -4,7 +4,7 @@ Progress Checklist is a server-free plugin for ChatGPT and Codex. It turns a tas
 
 ## Install through npm
 
-Publication is pending. The registry commands below become available after the first npm release. Until then, install from GitHub using `npm install -g github:lucastabit13-dev/progress-checklist`, then run `progress-checklist install`.
+Published on npm as [@lucastabit13/progress-checklist](https://www.npmjs.com/package/@lucastabit13/progress-checklist), version 0.3.1. Registry installation and packaged marketplace files have been verified.
 
 Requires Node.js 20 or newer and a Codex CLI with plugin support on PATH.
 
