@@ -2,6 +2,24 @@
 
 Progress Checklist is a server-free plugin for ChatGPT and Codex. It turns a task into a short checklist, then posts an updated checklist in the chat as steps are completed.
 
+## Install through npm
+
+Publication is pending. The registry commands below become available after the first npm release. Until then, install from GitHub using `npm install -g github:lucastabit13-dev/progress-checklist`, then run `progress-checklist install`.
+
+Requires Node.js 20 or newer and a Codex CLI with plugin support on PATH.
+
+```sh
+npm install -g @lucastabit13/progress-checklist
+progress-checklist install
+```
+
+The explicit install command registers the marketplace inside the npm package, then installs the plugin. Restart the desktop app and open a fresh chat to use it. On Windows the installer uses codex.exe; set CODEX_BIN to the full Codex executable path if it is not on PATH.
+
+To update, run the same two commands again. Keep the npm package installed while using its local marketplace. Run `progress-checklist path` to print the marketplace root for manual registration. npm installation alone does not activate the plugin.
+
+To remove the plugin, run `codex plugin remove progress-checklist@progress-checklist-local`, then `codex plugin marketplace remove progress-checklist-local` and `npm uninstall -g @lucastabit13/progress-checklist`.
+
+
 ## Example
 
 ```text
@@ -17,10 +35,10 @@ The checklist appears in normal assistant messages. Tool logs and command output
 
 Requirements: the ChatGPT desktop app or Codex with plugin support, and the `codex` CLI available in your terminal.
 
-After this repository is published to GitHub, replace `OWNER/REPO` with its actual GitHub path:
+Register the GitHub marketplace:
 
 ```sh
-codex plugin marketplace add OWNER/REPO
+codex plugin marketplace add lucastabit13-dev/progress-checklist
 codex plugin add progress-checklist@progress-checklist-local
 ```
 
@@ -31,8 +49,8 @@ The marketplace identifier is `progress-checklist-local` for compatibility with 
 ### Install from a local clone
 
 ```sh
-git clone https://github.com/OWNER/REPO.git
-cd REPO
+git clone https://github.com/lucastabit13-dev/progress-checklist.git
+cd progress-checklist
 codex plugin marketplace add .
 codex plugin add progress-checklist@progress-checklist-local
 ```
